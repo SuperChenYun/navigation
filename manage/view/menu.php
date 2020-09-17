@@ -13,6 +13,7 @@
             </ul>
             <!-- 右侧的导航项目 -->
             <ul class="nav navbar-nav navbar-right">
+                <li><a target="_blank" href="?control=html&action=flush&preview=true">预览效果</a></li>
                 <li><a href="?control=html&action=flush">重新生成</a></li>
             </ul>
         </div><!-- END .navbar-collapse -->

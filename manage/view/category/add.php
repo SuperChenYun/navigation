@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>添加分类 - 导航管理</title>
     <!-- ZUI 标准版压缩后的 CSS 文件 -->
-    <link rel="stylesheet" href="./assets/zui/css/zui.min.css">
+    <link rel="stylesheet" href="../assets/zui/css/zui.min.css">
     <!-- ZUI Javascript 依赖 jQuery -->
-    <script src="./assets/zui/lib/jquery/jquery.js"></script>
+    <script src="../assets/zui/lib/jquery/jquery.js"></script>
     <!-- ZUI 标准版压缩后的 JavaScript 文件 -->
-    <script src="./assets/zui/js/zui.min.js"></script>
+    <script src="../assets/zui/js/zui.min.js"></script>
 </head>
+
 <body>
-<div class="nav">
-    <?php include './view/menu.php'; ?>
-</div>
-<div class="nav-edit container-fluid">
-    <!-- HTML 代码 -->
-    <form class="form" action="?control=cateory&action=save" method="post">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="input-control">
-                    <input name="category_name" type="text" class="form-control" placeholder="分类名称" required>
+    <div class="nav">
+        <?php include '../view/menu.php'; ?>
+    </div>
+    <div class="nav-edit container-fluid">
+        <!-- HTML 代码 -->
+        <form class="form" action="?control=cateory&action=save" method="post">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="input-control">
+                        <input name="category_name" type="text" class="form-control" placeholder="分类名称" required>
+                    </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-xs-12">
-                <select class="form-control" name="pid" required>
-                    <option value="0">顶级分类</option>
-                    <?php foreach ($category as $item): ?>
-                        <option value="<?php echo $item['id']; ?>">|-- <?php echo $item['category_name']; ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <br>
+            <div class="row">
+                <div class="col-xs-12">
+                    <select class="form-control" name="pid" required>
+                        <option value="0">顶级分类</option>
+                        <?php foreach ($category as $item) : ?>
+                            <option value="<?php echo $item['id']; ?>">|-- <?php echo $item['category_name']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
             </div>
-        </div>
 
-        <br>
-        <div class="row text-center">
-            <button type="submit" class="btn btn-primary">添加</button>
-            <button type="reset" class="btn">重置</button>
-        </div>
-    </form>
-</div>
+            <br>
+            <div class="row text-center">
+                <button type="submit" class="btn btn-primary">添加</button>
+                <button type="reset" class="btn">重置</button>
+            </div>
+        </form>
+    </div>
 
 </body>
 <script>
-    $('form').on('submit', function (event) {
+    $('form').on('submit', function(event) {
         $.ajax({
             url: '?control=category&action=save',
             data: $('form').serializeArray(),
             dataType: 'json',
             method: 'POST',
-            success: function (resp) {
+            success: function(resp) {
                 console.log(resp)
                 if (resp.code == 0) {
                     new $.zui.Messager('添加成功。', {
                         type: 'success'
                     }).show();
-                    setTimeout(function () {
+                    setTimeout(function() {
                         window.location.href = '?control=category&action=index'
-                    }, 2000)
+                    }, 1000)
                 } else {
                     new $.zui.Messager(resp.msg, {
                         type: 'danger'
@@ -73,4 +75,5 @@
         return false;
     })
 </script>
+
 </html>

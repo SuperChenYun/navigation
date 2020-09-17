@@ -49,15 +49,18 @@ class Category extends Base
 
     public function update()
     {
-        $stat = $this->db->update('category', [
-            "category_name" => $this->param['category_name'],
-            "pid" => $this->param['pid'],
-        ],
+        $stat = $this->db->update(
+            'category',
+            [
+                "category_name" => $this->param['category_name'],
+                "pid" => $this->param['pid'],
+            ],
             [
                 "id" => $this->param['id']
-            ]);
+            ]
+        );
         if ($stat) {
-            return $this->successJson($this->db->get('category','*', ['id' => $this->param['id']]));
+            return $this->successJson($this->db->get('category', '*', ['id' => $this->param['id']]));
         } else {
             return $this->failJson('修改失败');
         }
@@ -73,6 +76,11 @@ class Category extends Base
             return $this->failJson('分类不存在');
         }
 
+        $subCategory = $this->db->get('category', '*', ['pid' => $this->param['id']]);
+        if ($subCategory) {
+            return $this->failJson('该分类下还有分类');
+        }
+
         $nav = $this->db->get('nav', '*', ['category_id' => $this->param['id']]);
         if ($nav) {
             return $this->failJson('该分类下还有站点');
@@ -82,7 +90,5 @@ class Category extends Base
             return $this->successJson('删除成功');
         }
         return $this->failJson('删除失败');
-
     }
-
 }
