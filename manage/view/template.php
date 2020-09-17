@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="viggo" />
-    <title>WebStack.cc - 设计师网址导航</title>
-    <meta name="keywords" content="UI设计,UI设计素材,设计导航,网址导航,设计资源,创意导航,创意网站导航,设计师网址大全,设计素材大全,设计师导航,UI设计资源,优秀UI设计欣赏,设计师导航,设计师网址大全,设计师网址导航,产品经理网址导航,交互设计师网址导航,www.webstack.cc">
-    <meta name="description" content="WebStack - 收集国内外优秀设计网站、UI设计资源网站、灵感创意网站、素材资源网站，定时更新分享优质产品设计书签。www.webstack.cc">
+    <title>.Start 网址导航</title>
+    <meta name="keywords" content=".Start, 网址导航,私有云网址导航,程序员导航,IT导航,私有云,快捷入口,快捷导航">
+    <meta name="description" content=".Start 专注于私有云的网址导航">
     <link rel="shortcut icon" href="../assets/images/favicon.png">
     <link rel="stylesheet" href="../assets/css/fonts/linecons/css/linecons.css">
     <link rel="stylesheet" href="../assets/css/fonts/fontawesome/css/font-awesome.min.css">
@@ -105,12 +105,10 @@
             </nav>
             <?php foreach ($navigation as $class) : ?>
                 <?php if (count($class['nav']) <= 0) continue; ?>
-                <!-- 常用推荐 -->
+                <!-- <?php echo $class['category_name'] ?> -->
                 <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="tag-<?php echo $class['category_id'] ?>"></i><?php echo $class['category_name'] ?></h4>
                 <div class="row">
                     <?php foreach ($class['nav'] as $nav) : ?>
-
-
                         <div class="col-sm-3">
                             <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('<?php echo $nav['nav_link'] ?>', '<?php echo $nav['nav_target'] ?>')" data-toggle="tooltip" data-placement="bottom" title="<?php echo $nav['nav_link'] ?>" data-original-title="<?php echo $nav['nav_name'] ?>">
                                 <div class="xe-comment-entry">
@@ -130,7 +128,7 @@
 
                 </div>
                 <br />
-                <!-- END 常用推荐 -->
+                <!-- END <?php echo $class['category_name'] ?> -->
             <?php endforeach; ?>
 
             <!-- Main Footer -->
@@ -141,8 +139,7 @@
                 <div class="footer-inner">
                     <!-- Add your copyright text here -->
                     <div class="footer-text">
-                        &copy; 2017-2020 <strong>快捷导航</strong> design by <strong>Viggo</strong> develop by <strong>iChenYun</strong>
-                        <!-- - Purchase for only <strong>23$</strong> -->
+                        &copy; 2017-2020 <strong>快捷导航</strong> design by <strong>Viggo</strong> development by <strong>iChenYun</strong>
                     </div>
                     <!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
                     <div class="go-up">
