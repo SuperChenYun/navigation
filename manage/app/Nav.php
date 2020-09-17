@@ -6,9 +6,11 @@ class Nav extends Base
 {
     public function index()
     {
-        $list = $this->db->select('nav', [
-            '[><]category' => ['category_id' => 'id']
-        ],
+        $list = $this->db->select(
+            'nav',
+            [
+                '[><]category' => ['category_id' => 'id']
+            ],
             [
                 'nav.id',
                 'nav.nav_name',
@@ -22,7 +24,8 @@ class Nav extends Base
             ],
             [
                 "ORDER" => ["nav.id" => "DESC"]
-            ]);
+            ]
+        );
 
         $this->fetch('view/index/index', [
             'list' => $list
@@ -80,20 +83,23 @@ class Nav extends Base
      */
     public function update()
     {
-        $stat = $this->db->update('nav', [
-            "category_id" => $this->param['category_id'],
-            "nav_name" => $this->param['nav_name'],
-            "nav_desc" => $this->param['nav_desc'],
-            "nav_icon" => $this->param['nav_icon'] ?? '',
-            "nav_link" => $this->param['nav_link'],
-            "nav_target" => $this->param['nav_target'],
-            "nav_sort" => $this->param['nav_sort'],
-        ],
-        [
-            "id" => $this->param['id']
-        ]);
+        $stat = $this->db->update(
+            'nav',
+            [
+                "category_id" => $this->param['category_id'],
+                "nav_name" => $this->param['nav_name'],
+                "nav_desc" => $this->param['nav_desc'],
+                "nav_icon" => $this->param['nav_icon'] ?? '',
+                "nav_link" => $this->param['nav_link'],
+                "nav_target" => $this->param['nav_target'],
+                "nav_sort" => $this->param['nav_sort'],
+            ],
+            [
+                "id" => $this->param['id']
+            ]
+        );
         if ($stat) {
-            return $this->successJson($this->db->get('nav','*', ['id' => $this->param['id']]));
+            return $this->successJson($this->db->get('nav', '*', ['id' => $this->param['id']]));
         } else {
             return $this->failJson('修改失败');
         }
@@ -108,7 +114,7 @@ class Nav extends Base
         if (empty($nav)) {
             return $this->failJson('该条目不存在');
         }
-        if( $this->db->delete('nav', ['id'=>$this->param['id']])) {
+        if ($this->db->delete('nav', ['id' => $this->param['id']])) {
             $this->successJson([], '删除成功');
         } else {
             $this->failJson('删除失败');

@@ -17,7 +17,7 @@
     <div class="nav">
         <?php include './view/menu.php'; ?>
     </div>
-    <div class="nav-edit container-fluid">
+    <div class="nav-edit container">
         <!-- HTML 代码 -->
         <form class="form" action="?control=nav&action=update" method="post">
             <input type="hidden" name="id">

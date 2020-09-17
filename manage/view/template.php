@@ -112,7 +112,7 @@
 
 
                         <div class="col-sm-3">
-                            <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('<?php echo $nav['nav_link'] ?>', '<?php echo $nav['nav_target'] ?>')" data-toggle="tooltip" data-placement="bottom" title="<?php echo $nav['nav_name'] ?>" data-original-title="<?php echo $nav['nav_name'] ?>">
+                            <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('<?php echo $nav['nav_link'] ?>', '<?php echo $nav['nav_target'] ?>')" data-toggle="tooltip" data-placement="bottom" title="<?php echo $nav['nav_link'] ?>" data-original-title="<?php echo $nav['nav_name'] ?>">
                                 <div class="xe-comment-entry">
                                     <a class="xe-user-img">
                                         <img data-src="<?php echo $nav['nav_icon'] ?>" class="lozad img-circle" width="40">

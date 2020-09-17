@@ -15,9 +15,9 @@
 
 <body>
     <div class="nav">
-        <?php include '../view/menu.php'; ?>
+        <?php include './view/menu.php'; ?>
     </div>
-    <div class="nav-edit container-fluid">
+    <div class="nav-edit container">
         <!-- HTML 代码 -->
         <form class="form" action="?control=cateory&action=save" method="post">
             <div class="row">

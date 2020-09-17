@@ -17,7 +17,7 @@
     <div class="nav">
         <?php include './view/menu.php'; ?>
     </div>
-    <div class="nav-list container-fluid">
+    <div class="nav-list container">
         <div class="btn-group">
             <a class="btn btn-primary" href="?control=category&action=create">添加</a>
         </div>
