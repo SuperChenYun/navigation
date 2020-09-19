@@ -2,11 +2,13 @@
 
 include './vendor/autoload.php';
 
-$contro = $_GET['control'] ?? 'Index';
+$control = $_GET['control'] ?? 'Index';
 $action = $_GET['action'] ?? 'index';
+
+$control = ucfirst(strtolower($control));
 //var_dump($contro);
 //var_dump($action);
-$calss = "app\\$contro";
+$calss = "app\\$control";
 
 if (!class_exists($calss)) {
     throw  new Exception('Class Not Exists:' . $calss);
