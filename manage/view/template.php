@@ -33,10 +33,10 @@
                 <header class="logo-env">
                     <!-- logo -->
                     <div class="logo">
-                        <a href="index.html" class="logo-expanded">
+                        <a href="/" class="logo-expanded">
                             <img src="../assets/images/logo@2x.png" width="100%" alt="" />
                         </a>
-                        <a href="index.html" class="logo-collapsed">
+                        <a href="/" class="logo-collapsed">
                             <img src="../assets/images/logo-collapsed@2x.png" width="40" alt="" />
                         </a>
                     </div>
