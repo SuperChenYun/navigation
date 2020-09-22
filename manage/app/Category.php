@@ -28,6 +28,7 @@ class Category extends Base
     {
         $stat = $this->db->insert('category', [
             "pid" => $this->param['pid'],
+            "sort" => $this->param['sort'],
             "category_name" => $this->param['category_name'],
         ]);
         if ($stat) {
@@ -53,6 +54,7 @@ class Category extends Base
             'category',
             [
                 "category_name" => $this->param['category_name'],
+                "sort" => $this->param['sort'],
                 "pid" => $this->param['pid'],
             ],
             [

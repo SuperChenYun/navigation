@@ -24,12 +24,12 @@
         <!-- HTML 代码 -->
         <form class="form" action="?control=nav&action=save" method="post">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-6">
                     <div class="input-control">
                         <input name="nav_name" type="text" class="form-control" placeholder="分类名称" required>
                     </div>
                 </div>
-                <div class="col-xs-12">
+                <div class="col-xs-6">
                     <select class="form-control" name="category_id" required>
                         <option value="">请选择分类</option>
                         <?php foreach ($category as $item) : ?>

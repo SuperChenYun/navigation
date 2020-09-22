@@ -30,6 +30,7 @@
                     <th>分类名称</th>
                     <!-- 以下三列中间可滚动 -->
                     <th class="flex-col" data-width="100">父级ID</th>
+                    <th class="flex-col" data-width="100">排序ID</th>
                     <!-- 以下列右侧固定 -->
                     <th>操作</th>
                 </tr>
@@ -40,6 +41,9 @@
                         <td><?php echo $nav['id'] ?></td>
                         <td><?php echo $nav['category_name'] ?></td>
                         <td><?php echo $nav['pid'] ?></td>
+                        <td>
+                            <span class="label label-info"><?php echo $nav['sort'] ?></span>
+                        </td>
                         <td>
                             <a href="?control=category&action=edit&id=<?php echo $nav['id']; ?>" class="btn btn-sm btn-primary" type="button">编辑</a>
                             <button class="btn btn-sm btn-danger" onclick="delNav(<?php echo $nav['id']; ?>)" type="button">删除</button>

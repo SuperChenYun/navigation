@@ -29,13 +29,18 @@
             </div>
             <br>
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-6">
                     <select class="form-control" name="pid" required>
                         <option value="0">顶级分类</option>
                         <?php foreach ($category as $item) : ?>
                             <option value="<?php echo $item['id']; ?>">|-- <?php echo $item['category_name']; ?></option>
                         <?php endforeach; ?>
                     </select>
+                </div>
+                <div class="col-xs-6">
+                    <div class="input-control">
+                        <input name="sort" type="text" class="form-control" placeholder="排序" required value="999">
+                    </div>
                 </div>
             </div>
 

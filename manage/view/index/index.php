@@ -49,7 +49,8 @@
                         <td><?php echo $nav['nav_desc'] ?></td>
                         <td><?php echo $nav['nav_link'] ?></td>
                         <td><?php echo $nav['nav_target'] ?></td>
-                        <td><?php echo $nav['nav_sort'] ?></td>
+                        <td>
+                            <span class="label label-info"><?php echo $nav['nav_sort'] ?></span></td>
                         <td>
                             <a href="?control=nav&action=edit&id=<?php echo $nav['id']; ?>" class="btn btn-sm btn-primary" type="button">编辑</a>
                             <button class="btn btn-sm btn-danger" onclick="delNav(<?php echo $nav['id']; ?>)" type="button">删除</button>

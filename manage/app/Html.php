@@ -14,7 +14,9 @@ class Html extends Base
     public function flush()
     {
 
-        $menu = $this->db->select('category', '*');
+        $menu = $this->db->select('category', '*', [
+            "ORDER" => ["sort" => "ASC"]
+        ]);
         $menuTree = $this->toTree($menu);
         $navigation = $this->db->select('nav', '*');
         $navigation = $this->toClass($navigation, $this->toKVMenu($menu));
@@ -101,8 +103,9 @@ class Html extends Base
     private function sortNav($nav)
     {
         foreach ($nav as  $key => $value) {
-            array_multisort(array_column($value, 'nav_sort'), SORT_DESC, $nav[$key]['nav']);
+            array_multisort(array_column($value['nav'], 'nav_sort'), SORT_DESC, $nav[$key]['nav']);
         }
+
         array_multisort(array_column($nav, 'sort'), SORT_ASC, $nav);
         return $nav;
     }

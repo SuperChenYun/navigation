@@ -38,7 +38,6 @@ class Nav extends Base
     public function create()
     {
         $category = $this->categoryToTree($this->db->select('category', '*'));
-        $nav = $this->db->get('nav', '*', ['id' => $this->param['id']]);
         $this->fetch('view/index/add', [
             'category' => $category
         ]);
