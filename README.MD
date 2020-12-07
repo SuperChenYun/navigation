@@ -40,11 +40,12 @@
 
    ​	2. 群辉用户
 
-   ​		群辉需要安装 `WebStation`套件和 `php` 套件，默认是nginx环境，也可以安装apache 环境
+      ​ 群辉需要安装 `WebStation`套件和 `php` 套件，默认是nginx环境，也可以安装apache 环境
 
 2. 部署
 
    把仓库下的文件放到站点目录中
+   终端方式 进入 `manage` 目录执行 `composer install`
 
 3. 访问和管理
 
